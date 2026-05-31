@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "polygon_444",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": null, "descriptio": null, "timestamp": null, "begin": null, "end": null, "altitudeMo": null, "tessellate": null, "extrude": null, "visibility": null, "drawOrder": null, "icon": null, "id": null, "shp_05": null, "descript_1": null, "altitude_1": null, "RG_AJ": null, "lohanak": null, "layer": null, "path": null }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 88.38565062428269, 27.822888715643746, 0.0 ], [ 88.385367146434675, 27.822416252563713, 0.0 ], [ 88.384970277447451, 27.822057180622888, 0.0 ], [ 88.384592306983421, 27.821830398344474, 0.0 ], [ 88.384138742426586, 27.821565819019657, 0.0 ], [ 88.384138742426586, 27.822227267331701, 0.0 ], [ 88.384327727658601, 27.82281312155094, 0.0 ], [ 88.384516712890616, 27.823039903829358, 0.0 ], [ 88.385197059725854, 27.823512366909387, 0.0 ], [ 88.385556131666689, 27.823776946234208, 0.0 ], [ 88.385839609514704, 27.823663555094999, 0.0 ], [ 88.385858508037899, 27.823606859525395, 0.0 ], [ 88.38565062428269, 27.822888715643746, 0.0 ] ] ] } }
+]
+}

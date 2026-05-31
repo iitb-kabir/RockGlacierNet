@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "polygon_216",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "252", "descriptio": null, "timestamp": null, "begin": null, "end": null, "altitudeMo": null, "tessellate": null, "extrude": null, "visibility": null, "drawOrder": null, "icon": null, "id": "2", "shp_05": null, "descript_1": null, "altitude_1": null, "RG_AJ": null, "lohanak": null, "layer": "05_shp", "path": "D:\\Roxk_Glacier\\shp\\05_shp.shp" }, "geometry": null }
+]
+}
