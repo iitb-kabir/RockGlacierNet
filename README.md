@@ -50,6 +50,35 @@ Train Dataset
 ↓
 U-Net / Swin-Unet / SegFormer
 
+## Google Earth Engine Setup & Feature Extraction
+
+To generate the multi-band feature stacks for the dataset, we rely on Google Earth Engine (GEE). The extraction pipeline requires a local GEE Python environment.
+
+### 1. Environment Setup
+A dedicated Conda environment is used to run the extraction scripts without dependency conflicts:
+```bash
+conda create -y -n rockglacier python=3.11
+conda activate rockglacier
+pip install earthengine-api geemap geopandas
+```
+
+### 2. Authentication
+Because the script runs locally, you must authenticate your Google Account via the terminal (this is a one-time process):
+```bash
+earthengine authenticate
+```
+This command will open a web browser. Select the Google account registered for Earth Engine, grant permissions, and copy the provided Authorization Code back into your terminal.
+
+### 3. Feature Extraction (Task 02)
+Once authenticated, the feature extraction pipeline will:
+- Read the generated `.geojson` polygon bounds.
+- Query Sentinel-2 Surface Reflectance (Summer 2023) and Copernicus DEM.
+- Calculate indices (NDVI, NDWI, NDSI, Slope, Aspect).
+- Stack them into a 12-band GeoTIFF at exactly `10m/px` resolution with a `200m` buffer.
+- Download them directly to the `features/` directory to perfectly align with the `masks/`.
+
+See `task_02.md` for full technical specifications.
+
 ## Future Workflow
 - **Data Preprocessing Pipeline:** Implement scripts to automate the extraction, rasterization, and stacking of features from `raw_data` into `features` and `stacks`.
 - **Patch Generation:** Develop a sliding window approach to extract appropriately sized patches from the feature stacks and masks, saving them into the respective `dataset` splits.
