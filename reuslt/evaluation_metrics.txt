@@ -1,0 +1,5 @@
+--- Final Evaluation Metrics ---
+Precision: 0.6729
+Recall:    0.8103
+F1 Score:  0.7352
+IoU:       0.5813

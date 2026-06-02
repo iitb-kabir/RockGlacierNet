@@ -7,11 +7,11 @@ from models.swin_unet import build_model
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, CSVLogger, ReduceLROnPlateau
 
 # Set paths
-TRAIN_FEAT = r"D:\RockGlacier_Project\dataset\train\features"
-TRAIN_MASK = r"D:\RockGlacier_Project\dataset\train\masks"
-VAL_FEAT   = r"D:\RockGlacier_Project\dataset\val\features"
-VAL_MASK   = r"D:\RockGlacier_Project\dataset\val\masks"
-CKPT_DIR   = r"D:\RockGlacier_Project\checkpoints"
+TRAIN_FEAT = "dataset/train/features"
+TRAIN_MASK = "dataset/train/masks"
+VAL_FEAT   = "dataset/val/features"
+VAL_MASK   = "dataset/val/masks"
+CKPT_DIR   = "checkpoints"
 
 os.makedirs(CKPT_DIR, exist_ok=True)
 
