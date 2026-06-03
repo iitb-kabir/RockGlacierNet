@@ -1,0 +1,16 @@
+{
+  "patch_size": 64,
+  "stride": 32,
+  "background_keep_ratio": 0.25,
+  "minimum_glacier_percentage": 0.0,
+  "padding_mode": "reflect",
+  "dataset_dir": "dataset",
+  "output_dir": "patches",
+  "num_bands": 12,
+  "splits": [
+    "train",
+    "val",
+    "test"
+  ],
+  "random_seed": 42
+}

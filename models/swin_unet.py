@@ -22,7 +22,7 @@ def transformer_block(x, num_heads, embed_dim):
         num_heads=num_heads, key_dim=embed_dim, dropout=0.1
     )(x1, x1)
     x2 = Add()([attention_output, x])
-    
+
     # FFN
     x3 = LayerNormalization(epsilon=1e-6)(x2)
     x3 = mlp(x3, hidden_units=[embed_dim * 2, embed_dim], dropout_rate=0.1)
@@ -39,22 +39,22 @@ def swin_block(x, num_heads):
     # Note: Keras layer inputs are tensors, we use tf.shape for dynamic shapes
     # but for Reshape we can rely on standard static shapes if possible,
     # or just let Keras handle it via layers.Reshape.
-    
+
     shape = x.shape
     H, W, C = shape[1], shape[2], shape[3]
-    
+
     if H is None or W is None:
         # Fallback to dynamic shaping if static shape isn't available
         # However, tf.keras.layers.Reshape requires static shape tuples with integers or -1.
         tokens = Reshape((-1, C))(x)
     else:
         tokens = Reshape((H * W, C))(x)
-        
+
     # Transformer block
     tokens = transformer_block(tokens, num_heads, C)
-    
+
     if H is None or W is None:
-        # We can't reshape back dynamically easily with layers.Reshape, 
+        # We can't reshape back dynamically easily with layers.Reshape,
         # so we assume static shapes are provided (which they are: 128x128 -> 8x8 in bottleneck)
         pass # Will fail if shape is fully dynamic
     else:
@@ -67,14 +67,14 @@ def swin_block(x, num_heads):
 # ---------------------------------------------------------------------------
 def conv_block(x, filters, name=""):
     """
-    Residual-only block adapted to 2D: 
+    Residual-only block adapted to 2D:
     Main path [Conv2D-BN-ReLU-Conv2D-BN] + Shortcut [Conv2D-BN]
     """
     # Main path
     h = Conv2D(filters, 3, padding='same', name=f'{name}_conv1')(x)
     h = BatchNormalization(name=f'{name}_bn1')(h)
     h = Activation('relu', name=f'{name}_relu1')(h)
-    
+
     h = Conv2D(filters, 3, padding='same', name=f'{name}_conv2')(h)
     h = BatchNormalization(name=f'{name}_bn2')(h)
 
