@@ -60,7 +60,7 @@ BAND_NAMES = ["B2", "B3", "B4", "B8", "B11", "B12",
               "NDVI", "NDWI", "NDSI", "Elev", "Slope", "Aspect"]
 
 # ── Earth Engine collection settings (used by collect_features.py) ────────────
-GEE_PROJECT       = "rock-glacier-net"
+GEE_PROJECT       = "aerobic-mile-484705-s8"
 S2_COLLECTION     = "COPERNICUS/S2_SR_HARMONIZED"
 DEM_COLLECTION    = "COPERNICUS/DEM/GLO30"
 S2_DATE_START     = "2021-01-01"
