@@ -33,7 +33,7 @@ from models.swin_unet import build_model
 TEST_FEAT   = "dataset/test/features"
 TEST_MASK   = "dataset/test/masks"
 CKPT_PATH   = "checkpoints/best_model.weights.h5"
-OUT_DIR     = "outputs/predictions/baseline_model_output"
+OUT_DIR     = "outputs"
 INPUT_SHAPE = (128, 128, 12)
 TARGET      = INPUT_SHAPE[:2]
 BATCH_SIZE  = 8
